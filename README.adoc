@@ -1,0 +1,375 @@
+:toc: macro
+:toc-title: Summary
+:toclevels: 3
+:numbered:
+
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+:back_to_top_target: top-target
+:back_to_top_label: ⬆ Back to top
+:back_to_top: <<{back_to_top_target},{back_to_top_label}>>
+
+:main_title: Angular, Eslint, Prettier & Editors
+:git_project: angular-eslint-prettier
+:git_username: jprivet-dev
+:git_url: https://github.com/{git_username}/{git_project}
+:git_clone_ssh: git@github.com:{git_username}/{git_project}.git
+
+[#{back_to_top_target}]
+= {main_title}
+
+toc::[]
+
+== Presentation
+
+Create a new Angular project with a minimal configuration of ESLint & Prettier, and set up your editor (PHPStorm, VSCode).
+
+Versions used :
+
+|===
+| Label | Version
+
+| nvm/node | 16.15.1
+| Angular | 14.0.0
+| @angular-eslint/schematics | 14.0.0-alpha.2
+| Prettier | 2.6.2
+| PHPStorm | 2022.1.2
+| VS Code | 1.67.2
+|===
+
+{back_to_top}
+
+== Prerequisites: NVM or Node
+
+First, you will need to install NVM (Node Version Manager) or Node
+
+[NOTE]
+====
+More information on:
+
+* NVM: https://github.com/nvm-sh/nvm
+* Node: https://nodejs.org/en/download
+====
+
+In my case, I used NVM:
+
+```
+$ nvm install 16
+$ nvm use 16
+Now using node v16.15.1 (npm v8.11.0)
+```
+
+{back_to_top}
+
+== Installation
+
+[subs=attributes+]
+```
+$ git clone {git_clone_ssh}
+$ cd {git_project}
+$ npm install
+```
+
+After installation, you can <<set-up-your-editor>>.
+
+{back_to_top}
+
+== Create your Angular project step by step
+
+It is possible to create the content of this repository, from scratch. To do this, you will need to boot into an empty folder.
+
+TIP: If you wish, you can delete all the files in this repository, except the `README.adoc` file which you can keep. Angular CLI will generate a new project with a `README.md`, that will not conflict with the `README.adoc`.
+
+=== Step #1: Install Angular CLI
+
+To generate a new Angular project, you will first need to install Angular CLI:
+
+```
+$ npm install @angular/cli --location=global
+```
+
+NOTE: More information on https://angular.io/cli
+
+{back_to_top}
+
+=== Step #2: Create a new Angular project
+
+With the following command, you will generate a new Angular project to the root:
+
+```
+$ ng new app --directory . --prefix app --style scss --defaults --strict
+```
+
+{back_to_top}
+
+=== Step #3: Install ESLint Schematics
+
+```
+$ ng add @angular-eslint/schematics
+```
+
+If you have that error:
+
+```
+✔ Packages successfully installed.
+NOT SUPPORTED: keyword "id", use "$id" for schema ID
+```
+
+Execute the following command:
+
+```
+$ ng add @angular-eslint/schematics@next
+```
+
+NOTE: More information on https://github.com/angular-eslint/angular-eslint/issues/790#issuecomment-962988420.
+
+At the end of the process, you will get a confirmation message:
+
+```
+...
+CREATE .eslintrc.json (984 bytes)
+UPDATE package.json (1451 bytes)
+UPDATE angular.json (3456 bytes)
+✔ Packages installed successfully.
+```
+
+{back_to_top}
+
+=== Step #4: Convert TSLint to ESlint
+
+```
+$ ng g @angular-eslint/schematics:convert-tslint-to-eslint
+```
+
+If you get this error:
+
+```
+Path "/tslint.json" does not exist.
+```
+
+Simply create an empty file `tslint.json` (it will be automatically deleted right after), and run the conversion again:
+
+```
+$ echo {} > tslint.json
+$ ng g @angular-eslint/schematics:convert-tslint-to-eslint
+```
+
+At the end of the process, you will get a confirmation message:
+
+```
+...
+DELETE tslint.json
+UPDATE angular.json (3456 bytes)
+UPDATE package.json (1451 bytes)
+✔ Packages installed successfully.
+```
+
+{back_to_top}
+
+=== Step #5: Install Prettier
+
+```
+$ npm install --save-dev --save-exact prettier
+```
+
+Create an empty config file to let editors and other tools know you are using Prettier:
+
+```
+$ echo {} > .prettierrc.json
+```
+
+Create a `.prettierignore` file to let the Prettier CLI and editors know which files to not format.
+
+TIP: Base your `.prettierignore` on `.gitignore` and `.eslintignore` (if you have one).
+
+In my case, I duplicate `.gitignore`:
+
+```
+$ cp .gitignore .prettierignore
+```
+
+NOTE: More information on https://prettier.io/docs/en/install.html.
+
+{back_to_top}
+
+=== Step #6: Format your files with Prettier
+
+With the following command, you can format all files with Prettier:
+
+```
+npx prettier --write .
+```
+
+{back_to_top}
+
+== Set up your editor [[set-up-your-editor]]
+
+=== PHPStorm
+
+==== Configure a local Node.js interpreter [[configure-a-local-node-js-interpreter]]
+
+NOTE: More information on https://www.jetbrains.com/help/phpstorm/developing-node-js-applications.html#ws_node_configure_local_node_interpreter.
+
+TIP: In my case I use NVM.
+
+Configure in *Settings > Languages & Frameworks > Node.js* :
+
+image::docs/phpstorm-settings-node-interpreter.png[]
+
+{back_to_top}
+
+==== Configure ESLint
+
+NOTE: More information on https://www.jetbrains.com/help/phpstorm/eslint.html
+
+CAUTION: Before you start: <<configure-a-local-node-js-interpreter>>.
+
+Configure in *Settings > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint* :
+
+image::docs/phpstorm-settings-eslint.png[]
+
+After the configuration, you can see the ESLint alerts in your code. For example:
+
+image::docs/phpstorm-settings-eslint-error.png[]
+
+{back_to_top}
+
+==== Configure Prettier
+
+NOTE: More information on https://www.jetbrains.com/help/phpstorm/prettier.html
+
+CAUTION: Before you start: <<configure-a-local-node-js-interpreter>>.
+
+Configure in *Settings > Languages & Frameworks > JavaScript > Prettier* :
+
+image::docs/phpstorm-settings-prettier.png[]
+
+==== Reformat with Prettier
+
+After the configuration, you can reformat your code :
+
+* With the shortcut *Ctrl+Alt+Maj+P*.
+* From the contextual menu (*Right click > Reformat with Prettier*).
+
+image::docs/phpstorm-settings-prettier-contextual-menu.png[]
+
+It's possible to reformat on save. Go in *Settings > Languages & Frameworks > JavaScript > Prettier*, and check *On save* option:
+
+image::docs/phpstorm-settings-prettier-on-save.png[]
+
+If you click on *All actions on save...*, you will see the list of all activated actions:
+
+image::docs/phpstorm-settings-tools-actions-on-save.png[]
+
+TIP: I also use the *Optimize import* option. This removes unused imports and organizes import statements in the current file. See https://www.jetbrains.com/help/phpstorm/creating-and-optimizing-imports.html#optimize-imports.
+
+{back_to_top}
+
+=== VS Code
+
+==== Configure ESLint
+
+Install the _ESLint_ extension of Microsoft: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint.
+
+After the installation, you can immediately see the ESLint alerts in your code. For example:
+
+image::docs/vscode-eslint-error.png[]
+
+==== Configure Prettier
+
+Install the _Prettier - Code formatter_ extension: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode.
+
+==== Reformat with Prettier
+
+After the installation, you can reformat your code :
+
+* With the shortcut *Ctrl+Alt+I*.
+* From the contextual menu (*Right click > Format Document*).
+
+image::docs/vscode-format-document.png[]
+
+If you have an alert *Configure Default Formatter*:
+
+image::docs/vscode-alert-configure-default-formatter.png[]
+
+Click on the button *Configure...* and select *Prettier - Code formatter*:
+
+image::docs/vscode-select-default-formatter.png[]
+
+*It's possible to reformat on save.*
+
+To do this, go on *View > Command Palette* (*Ctrl+Maj+P*), type `preferences open settings` and validate. This opens the `settings.json` file. In my case, I have the following content:
+
+image::docs/vscode-settings-json.png[]
+
+Add `editor.formatOnPaste` and `editor.formatOnSave` to the root of the object, and save:
+
+.settings.json
+```json
+{
+    "[typescript]": {
+        "...": "..."
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+}
+```
+
+From now on, whenever you paste code or save, the code will be reformatted.
+
+Before:
+
+image::docs/vscode-reformat-before.png[]
+
+After (on paste code or save):
+
+image::docs/vscode-reformat-after.png[]
+
+{back_to_top}
+
+== Resources
+
+=== NVM & Node
+
+* https://github.com/nvm-sh/nvm
+* https://nodejs.org/en/download
+
+=== Angular, ESLint & Prettier
+
+* https://blog.ninja-squad.com/2021/03/31/migrating-from-tslint-to-eslint/
+* https://github.com/typescript-eslint/tslint-to-eslint-config
+* https://github.com/angular-eslint/angular-eslint#migrating-an-angular-cli-project-from-codelyzer-and-tslint
+* https://www.npmjs.com/package/@angular-eslint/schematics
+* https://github.com/angular-eslint/angular-eslint/issues/790#issuecomment-962988420
+
+=== PHPStorm
+
+* https://www.jetbrains.com/help/phpstorm/developing-node-js-applications.html#ws_node_configure_local_node_interpreter
+* https://www.jetbrains.com/help/phpstorm/eslint.html
+* https://www.jetbrains.com/help/phpstorm/prettier.html
+* https://www.jetbrains.com/help/phpstorm/creating-and-optimizing-imports.html#optimize-imports
+
+=== VS Code
+
+* https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+* https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+* https://khalilstemmler.com/blogs/tooling/prettier/
+
+{back_to_top}
+
+== License
+
+This repository is released under the {git_url}/blob/v14.x/LICENSE[*MIT License*]
+
+---
+
+{back_to_top}

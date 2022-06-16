@@ -253,6 +253,8 @@ Configure in *Settings > Languages & Frameworks > JavaScript > Prettier* :
 
 image::docs/phpstorm-settings-prettier.png[]
 
+{back_to_top}
+
 ==== Reformat with Prettier
 
 After the configuration, you can reformat your code :
@@ -284,9 +286,13 @@ After the installation, you can immediately see the ESLint alerts in your code. 
 
 image::docs/vscode-eslint-error.png[]
 
+{back_to_top}
+
 ==== Configure Prettier
 
 Install the _Prettier - Code formatter_ extension: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode.
+
+{back_to_top}
 
 ==== Reformat with Prettier
 

@@ -281,9 +281,32 @@ TIP: I also use the *Optimize import* option. This removes unused imports and or
 
 Install the _ESLint_ extension of Microsoft: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint.
 
-After the installation, you can immediately see the ESLint alerts in your code. For example:
+After the installation, you may get an error when opening `app.compoment.ts`:
 
-image::docs/vscode-eslint-error.png[]
+image::docs/vscode-eslint-error-tsconfig.png[]
+
+To fix it, change in `.eslintrc.json` the value of `overrides.parserOptions.project`. Replace `"tsconfig.json"` by `"app/tsconfig.json"`:
+
+..eslintrc.json
+```json
+{
+  "...": "...",
+  "overrides": [
+    {
+      "...": "...",
+      "parserOptions": {
+        "project": ["app/tsconfig.json"],
+        "...": "..."
+      }
+    }
+  ]
+}
+
+```
+
+After this change, you can immediately see the ESLint alerts in your code. For example:
+
+image::docs/vscode-eslint-alert.png[]
 
 {back_to_top}
 

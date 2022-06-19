@@ -287,7 +287,7 @@ After the installation, you may get an error when opening `app.compoment.ts`:
 
 image::docs/vscode-eslint-error-tsconfig.png[]
 
-To fix it, change in `.eslintrc.json` the value of `overrides.parserOptions.project`. Replace `"tsconfig.json"` by `"app/tsconfig.json"`:
+To fix it, change in `.eslintrc.json` the value of `overrides.parserOptions.project`. Replace `"tsconfig.json"` by `"app/tsconfig.json"` (This modification is only necessary for VS Code, not for PHPStorm.):
 
 ..eslintrc.json
 ```json

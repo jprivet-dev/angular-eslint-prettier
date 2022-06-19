@@ -101,7 +101,7 @@ NOTE: More information on https://angular.io/cli
 
 === Step #2: Create a new Angular project
 
-With the following command, you will generate a new Angular project to the root:
+With the following command, you will generate a new Angular project in an `app` folder:
 
 ```
 $ ng new app --skip-git --style scss --defaults --strict
@@ -205,7 +205,7 @@ NOTE: More information on https://prettier.io/docs/en/install.html.
 With the following command, you can format all files with Prettier:
 
 ```
-npx prettier --write .
+$ npx prettier --write .
 ```
 
 {back_to_top}
@@ -263,7 +263,9 @@ After the configuration, you can reformat your code :
 
 image::docs/phpstorm-settings-prettier-contextual-menu.png[]
 
-It's possible to reformat on save. Go in *Settings > Languages & Frameworks > JavaScript > Prettier*, and check *On save* option:
+TIP: It's possible to reformat on save.
+
+To reformat on save, Go in *Settings > Languages & Frameworks > JavaScript > Prettier*, and check *On save* option:
 
 image::docs/phpstorm-settings-prettier-on-save.png[]
 
@@ -333,9 +335,9 @@ Click on the button *Configure...* and select *Prettier - Code formatter*:
 
 image::docs/vscode-select-default-formatter.png[]
 
-*It's possible to reformat on save.*
+TIP: It's possible to reformat on save.
 
-To do this, go on *View > Command Palette* (*Ctrl+Maj+P*), type `preferences open settings` and validate. This opens the `settings.json` file. In my case, I have the following content:
+To reformat on save, go on *View > Command Palette* (*Ctrl+Maj+P*), type `preferences open settings` and validate. This opens the `settings.json` file. In my case, I have the following content:
 
 image::docs/vscode-settings-json.png[]
 

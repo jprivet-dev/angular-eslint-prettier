@@ -104,7 +104,7 @@ NOTE: More information on https://angular.io/cli
 With the following command, you will generate a new Angular project in an `app` folder:
 
 ```
-$ ng new app --skip-git --style scss --defaults --strict
+$ ng new app --skip-git true --style scss --defaults --strict
 $ cd app
 ```
 
@@ -205,6 +205,34 @@ NOTE: More information on https://prettier.io/docs/en/install.html.
 With the following command, you can format all files with Prettier:
 
 ```
+$ npx prettier --write .
+```
+
+{back_to_top}
+
+=== Synthesis of commands
+
+```
+# 1) Install Angular CLI
+$ npm install @angular/cli --location=global
+
+# 2) Create a new Angular project
+$ ng new app --skip-git true --style scss --defaults --strict
+$ cd app
+
+# 3) Install ESLint Schematics
+$ ng add @angular-eslint/schematics@next
+
+# 4) Convert TSLint to ESlint
+$ echo {} > tslint.json
+$ ng g @angular-eslint/schematics:convert-tslint-to-eslint
+
+# 5) Install Prettier
+$ npm install --save-dev --save-exact prettier
+$ echo {} > .prettierrc.json
+$ cp .gitignore .prettierignore
+
+# 6) Format your files with Prettier
 $ npx prettier --write .
 ```
 

@@ -39,7 +39,7 @@ Versions used :
 | Label | Version
 
 | nvm/node | 16.15.1
-| Angular | 14.0.2
+| Angular | 14.0.4
 | @angular-eslint/schematics | 14.0.0-alpha.3
 | Prettier | 2.7.1
 | PHPStorm | 2022.1.2

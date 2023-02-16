@@ -250,7 +250,7 @@ TIP: In my case I use NVM.
 
 Configure in *Settings > Languages & Frameworks > Node.js* :
 
-image::docs/phpstorm-settings-node-interpreter.png[]
+image::doc/phpstorm-settings-node-interpreter.png[]
 
 {back_to_top}
 
@@ -262,11 +262,11 @@ CAUTION: Before you start: <<configure-a-local-node-js-interpreter>>.
 
 Configure in *Settings > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint* :
 
-image::docs/phpstorm-settings-eslint.png[]
+image::doc/phpstorm-settings-eslint.png[]
 
 After the configuration, you can see the ESLint alerts in your code. For example:
 
-image::docs/phpstorm-settings-eslint-error.png[]
+image::doc/phpstorm-settings-eslint-error.png[]
 
 {back_to_top}
 
@@ -278,7 +278,7 @@ CAUTION: Before you start: <<configure-a-local-node-js-interpreter>>.
 
 Configure in *Settings > Languages & Frameworks > JavaScript > Prettier* :
 
-image::docs/phpstorm-settings-prettier.png[]
+image::doc/phpstorm-settings-prettier.png[]
 
 {back_to_top}
 
@@ -289,17 +289,17 @@ After the configuration, you can reformat your code :
 * With the shortcut *Ctrl+Alt+Maj+P*.
 * From the contextual menu (*Right click > Reformat with Prettier*).
 
-image::docs/phpstorm-settings-prettier-contextual-menu.png[]
+image::doc/phpstorm-settings-prettier-contextual-menu.png[]
 
 TIP: It's possible to reformat on save.
 
 To reformat on save, Go in *Settings > Languages & Frameworks > JavaScript > Prettier*, and check *On save* option:
 
-image::docs/phpstorm-settings-prettier-on-save.png[]
+image::doc/phpstorm-settings-prettier-on-save.png[]
 
 If you click on *All actions on save...*, you will see the list of all activated actions:
 
-image::docs/phpstorm-settings-tools-actions-on-save.png[]
+image::doc/phpstorm-settings-tools-actions-on-save.png[]
 
 TIP: I also use the *Optimize import* option. This removes unused imports and organizes import statements in the current file. See https://www.jetbrains.com/help/phpstorm/creating-and-optimizing-imports.html#optimize-imports.
 
@@ -313,7 +313,7 @@ Install the _ESLint_ extension of Microsoft: https://marketplace.visualstudio.co
 
 After the installation, you may get an error when opening `app.compoment.ts`:
 
-image::docs/vscode-eslint-error-tsconfig.png[]
+image::doc/vscode-eslint-error-tsconfig.png[]
 
 To fix it, change in `.eslintrc.json` the value of `overrides.parserOptions.project`. Replace `"tsconfig.json"` by `"app/tsconfig.json"` (This modification is only necessary for VS Code, not for PHPStorm.):
 
@@ -336,7 +336,7 @@ To fix it, change in `.eslintrc.json` the value of `overrides.parserOptions.proj
 
 After this change, you can immediately see the ESLint alerts in your code. For example:
 
-image::docs/vscode-eslint-alert.png[]
+image::doc/vscode-eslint-alert.png[]
 
 {back_to_top}
 
@@ -353,21 +353,21 @@ After the installation, you can reformat your code :
 * With the shortcut *Ctrl+Alt+I*.
 * From the contextual menu (*Right click > Format Document*).
 
-image::docs/vscode-format-document.png[]
+image::doc/vscode-format-document.png[]
 
 If you have an alert *Configure Default Formatter*:
 
-image::docs/vscode-alert-configure-default-formatter.png[]
+image::doc/vscode-alert-configure-default-formatter.png[]
 
 Click on the button *Configure...* and select *Prettier - Code formatter*:
 
-image::docs/vscode-select-default-formatter.png[]
+image::doc/vscode-select-default-formatter.png[]
 
 TIP: It's possible to reformat on save.
 
 To reformat on save, go on *View > Command Palette* (*Ctrl+Maj+P*), type `preferences open settings` and validate. This opens the `settings.json` file. In my case, I have the following content:
 
-image::docs/vscode-settings-json.png[]
+image::doc/vscode-settings-json.png[]
 
 Add `editor.formatOnPaste` and `editor.formatOnSave` to the root of the object, and save:
 
@@ -386,11 +386,11 @@ From now on, whenever you paste code or save, the code will be reformatted.
 
 Before:
 
-image::docs/vscode-reformat-before.png[]
+image::doc/vscode-reformat-before.png[]
 
 After (on paste code or save):
 
-image::docs/vscode-reformat-after.png[]
+image::doc/vscode-reformat-after.png[]
 
 {back_to_top}
 

@@ -3,9 +3,9 @@
 # Usage:
 # $ . scripts/generate-app.sh
 
-echo "######################################################"
-echo "# Generate a new Angular app using ESlint & Prettier #"
-echo "######################################################"
+echo "##########################################################################"
+echo "# Generate a new Angular app using directly ESlint schematics & Prettier #"
+echo "##########################################################################"
 
 echo "> Remove the old Angular app"
 rm -rf app

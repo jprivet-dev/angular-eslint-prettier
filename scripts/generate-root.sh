@@ -1,18 +1,14 @@
 #!/usr/bin/env bash
 
 # Usage:
-# $ . scripts/generate-app.sh
+# $ . scripts/generate-root.sh
 
-echo "##########################################################################"
-echo "# Generate a new Angular app using directly ESlint schematics & Prettier #"
-echo "##########################################################################"
+echo "####################################################################################"
+echo "# Generate (in root) a new Angular app using directly ESlint schematics & Prettier #"
+echo "####################################################################################"
 
-echo "> Remove the old Angular app"
-[[ -d app ]] && rm -rf app
-
-echo "> Generate an empty Angular workspace"
-ng new app --create-application false --defaults
-cd app
+echo "> Generate (in root) an empty Angular workspace"
+ng new app --create-application false --new-project-root . --defaults
 
 echo "> Install ESLint"
 ng add @angular-eslint/schematics

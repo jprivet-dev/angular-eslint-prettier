@@ -3,6 +3,7 @@
 # Usage:
 # $ . scripts/generate-app.sh
 
+rm -rf app
 ng new app --create-application false --force
 cd app
 ng add @angular-eslint/schematics

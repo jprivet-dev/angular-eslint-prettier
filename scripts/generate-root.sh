@@ -8,7 +8,7 @@ echo "# Generate (in root) a new Angular app using directly ESlint schematics & 
 echo "####################################################################################"
 
 echo "> Generate (in root) an empty Angular workspace"
-ng new app --create-application false --new-project-root . --defaults
+ng new app --directory ./ --create-application false --defaults
 
 echo "> Install ESLint"
 ng add @angular-eslint/schematics

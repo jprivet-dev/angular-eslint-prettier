@@ -18,7 +18,7 @@ echo "> Install ESLint"
 ng add @angular-eslint/schematics
 
 echo "> Convert TSLint to ESlint"
-$ echo {} >tslint.json
+echo {} >tslint.json
 ng g @angular-eslint/schematics:convert-tslint-to-eslint
 
 echo "> Install Prettier locally"

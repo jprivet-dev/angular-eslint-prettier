@@ -4,10 +4,10 @@
 # $ . scripts/generate-root.sh
 
 echo "####################################################################################"
-echo "# Generate (in root) a new Angular app using directly ESlint schematics & Prettier #"
+echo "# Generate a new Angular app (in root) using directly ESlint schematics & Prettier #"
 echo "####################################################################################"
 
-echo "> Generate (in root) an empty Angular workspace"
+echo "> Generate an empty Angular workspace (in root)"
 ng new app --directory ./ --create-application false --defaults
 
 echo "> Install ESLint"

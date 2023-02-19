@@ -29,7 +29,7 @@ endif::[]
 :project_release: v1.1501.0.0
 :node_release: v18.13.0
 :angular_release: 15.1.5
-:shematics_release: 15.2.1
+:schematics_release: 15.2.1
 :prettier_release: 2.7.1
 :phpstorm_release: 2022.3.2
 :vscode_release: 1.75.1
@@ -54,7 +54,7 @@ Versions used :
 
 | node | {node_release}
 | Angular | {angular_release}
-| @angular-eslint/schematics | {shematics_release}
+| @angular-eslint/schematics | {schematics_release}
 | Prettier | {prettier_release}
 | PHPStorm | {phpstorm_release}
 | VS Code | {vscode_release}

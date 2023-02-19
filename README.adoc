@@ -28,8 +28,8 @@ endif::[]
 // Releases
 :project_release: v1.1501.0.0
 :node_release: v18.13.0
-:angular_release: 15.1.6
-:shematics_release: 15.1.6
+:angular_release: 15.1.5
+:shematics_release: 15.2.1
 :prettier_release: 2.7.1
 :phpstorm_release: 2022.3.2
 :vscode_release: 1.75.1

@@ -39,7 +39,7 @@ endif::[]
 
 image:https://badgen.net/badge/release/{project_release}/blue[Project release,link={git_url}/releases/tag/{project_release}]
 image:https://badgen.net/badge/angular/{angular_release}/d93630[Angular release,link=https://github.com/angular/angular/releases/tag/{angular_release}]
-image:https://developer.stackblitz.com/img/open_in_stackblitz_small.svg[Open in StackBlitz,link={stackblitz_from_github}]
+// image:https://developer.stackblitz.com/img/open_in_stackblitz_small.svg[Open in StackBlitz,link={stackblitz_from_github}]
 
 toc::[]
 
@@ -111,11 +111,11 @@ After installation, you can <<set-up-your-editor>>.
 
 {back_to_top}
 
-== Launching project on StackBlitz
-
-image:https://developer.stackblitz.com/img/open_in_stackblitz.svg[Open in StackBlitz,link={stackblitz_from_github}]
-
-{back_to_top}
+// == Launching project on StackBlitz
+//
+// image:https://developer.stackblitz.com/img/open_in_stackblitz.svg[Open in StackBlitz,link={stackblitz_from_github}]
+//
+// {back_to_top}
 
 == Create your Angular project step by step
 

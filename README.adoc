@@ -26,11 +26,11 @@ endif::[]
 
 // Releases
 :project_release: v0.0.0-alpha.0
-:node_release: 18.13.0
+:node_release: v18.13.0
 :angular_release: 15.1.6
 :shematics_release: 15.1.6
 :prettier_release: 2.7.1
-:phpstorm_release: 2022.1.2
+:phpstorm_release: 2022.3.2
 :vscode_release: 1.67.2
 
 [#{back_to_top_target}]
@@ -87,7 +87,7 @@ $ npm --version
 
 === Global Angular CLI
 
-To generate a new Angular project, you will need to install global Angular CLI:
+To generate a new Angular project, you will need to install/update global Angular CLI:
 
 ```
 $ npm install -g @angular/cli
@@ -272,19 +272,22 @@ $ npx prettier --write .
 
 ==== Configure a local Node.js interpreter [[configure-a-local-node-js-interpreter]]
 
-NOTE: More information on https://www.jetbrains.com/help/phpstorm/developing-node-js-applications.html#ws_node_configure_local_node_interpreter.
+TIP: In my case I use Node.
 
-TIP: In my case I use NVM.
-
-Configure in *Settings > Languages & Frameworks > Node.js* :
+Configure in *Settings > Languages & Frameworks > Node.js*. PHPStorm automatically finds Node and NPM:
 
 image::doc/phpstorm-settings-node-interpreter.png[]
+
+If you use `NVM`, you can have (for example):
+
+* Node interpreter: `~/.nvm/versions/node/v16.15.1/bin/node`
+* Package manager: `npm ~/.nvm/versions/node/v16.15.1/bin/npm`
+
+NOTE: More information on https://www.jetbrains.com/help/phpstorm/developing-node-js-applications.html#ws_node_configure_local_node_interpreter.
 
 {back_to_top}
 
 ==== Configure ESLint
-
-NOTE: More information on https://www.jetbrains.com/help/phpstorm/eslint.html
 
 CAUTION: Before you start: <<configure-a-local-node-js-interpreter>>.
 
@@ -296,17 +299,19 @@ After the configuration, you can see the ESLint alerts in your code. For example
 
 image::doc/phpstorm-settings-eslint-error.png[]
 
+NOTE: More information on https://www.jetbrains.com/help/phpstorm/eslint.html
+
 {back_to_top}
 
 ==== Configure Prettier
-
-NOTE: More information on https://www.jetbrains.com/help/phpstorm/prettier.html
 
 CAUTION: Before you start: <<configure-a-local-node-js-interpreter>>.
 
 Configure in *Settings > Languages & Frameworks > JavaScript > Prettier* :
 
 image::doc/phpstorm-settings-prettier.png[]
+
+NOTE: More information on https://www.jetbrains.com/help/phpstorm/prettier.html
 
 {back_to_top}
 

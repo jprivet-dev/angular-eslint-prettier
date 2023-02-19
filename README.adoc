@@ -26,7 +26,7 @@ endif::[]
 :stackblitz_from_github: https://stackblitz.com/github/{git_username}/{git_project}/tree/main/app
 
 // Releases
-:project_release: v0.0.0-alpha.0
+:project_release: v1.1501.0.0
 :node_release: v18.13.0
 :angular_release: 15.1.6
 :shematics_release: 15.1.6

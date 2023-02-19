@@ -31,7 +31,7 @@ endif::[]
 :shematics_release: 15.1.6
 :prettier_release: 2.7.1
 :phpstorm_release: 2022.3.2
-:vscode_release: 1.67.2
+:vscode_release: 1.75.1
 
 [#{back_to_top_target}]
 = {main_title}
@@ -270,6 +270,14 @@ $ npx prettier --write .
 
 === PHPStorm
 
+==== Install PHPStorm
+
+PhpStorm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux operating systems.
+
+NOTE: More information on https://www.jetbrains.com/help/phpstorm/installation-guide.html
+
+{back_to_top}
+
 ==== Configure a local Node.js interpreter [[configure-a-local-node-js-interpreter]]
 
 TIP: In my case I use Node.
@@ -315,7 +323,7 @@ NOTE: More information on https://www.jetbrains.com/help/phpstorm/prettier.html
 
 {back_to_top}
 
-==== Reformat with Prettier
+==== Reformat with Prettier: From the contextual menu
 
 After the configuration, you can reformat your code :
 
@@ -324,7 +332,7 @@ After the configuration, you can reformat your code :
 
 image::doc/phpstorm-settings-prettier-contextual-menu.png[]
 
-TIP: It's possible to reformat on save.
+==== Reformat with Prettier: On save
 
 To reformat on save, Go in *Settings > Languages & Frameworks > JavaScript > Prettier*, and check *On save* option:
 
@@ -340,46 +348,35 @@ TIP: I also use the *Optimize import* option. This removes unused imports and or
 
 === VS Code
 
-==== Configure ESLint
+==== Install VS Code
+
+Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.  Visual Studio Code is free and available on your favorite platform - Linux, macOS, and Windows.
+
+NOTE: More information on https://code.visualstudio.com/
+
+==== Install ESLint
 
 Install the _ESLint_ extension of Microsoft: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint.
 
-After the installation, you may get an error when opening `app.compoment.ts`:
+image::doc/vscode-eslint-install.png[]
 
-image::doc/vscode-eslint-error-tsconfig.png[]
+==== Configure ESLint
 
-To fix it, change in `.eslintrc.json` the value of `overrides.parserOptions.project`. Replace `"tsconfig.json"` by `"app/tsconfig.json"` (This modification is only necessary for VS Code, not for PHPStorm.):
-
-..eslintrc.json
-```json
-{
-  "...": "...",
-  "overrides": [
-    {
-      "...": "...",
-      "parserOptions": {
-        "project": ["app/tsconfig.json"],
-        "...": "..."
-      }
-    }
-  ]
-}
-
-```
-
-After this change, you can immediately see the ESLint alerts in your code. For example:
+After the installation, you can immediately see the ESLint alerts in your code. For example:
 
 image::doc/vscode-eslint-alert.png[]
 
 {back_to_top}
 
-==== Configure Prettier
+==== Install Prettier
 
 Install the _Prettier - Code formatter_ extension: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode.
 
+image::doc/vscode-prettier-install.png[]
+
 {back_to_top}
 
-==== Reformat with Prettier
+==== Reformat with Prettier: From the contextual menu
 
 After the installation, you can reformat your code :
 
@@ -396,24 +393,11 @@ Click on the button *Configure...* and select *Prettier - Code formatter*:
 
 image::doc/vscode-select-default-formatter.png[]
 
-TIP: It's possible to reformat on save.
+==== Reformat with Prettier: On save
 
-To reformat on save, go on *View > Command Palette* (*Ctrl+Maj+P*), type `preferences open settings` and validate. This opens the `settings.json` file. In my case, I have the following content:
+To reformat on save, go on *File > Preferences > Settings [Ctrl+,]*, and choose *Text Editor > Formatting*. Check *Format On Paste* and *Format On Save*:
 
-image::doc/vscode-settings-json.png[]
-
-Add `editor.formatOnPaste` and `editor.formatOnSave` to the root of the object, and save:
-
-.settings.json
-```json
-{
-    "[typescript]": {
-        "...": "..."
-    },
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
-}
-```
+image::doc/vscode-settings-tab.png[]
 
 From now on, whenever you paste code or save, the code will be reformatted.
 

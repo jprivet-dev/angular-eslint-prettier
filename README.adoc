@@ -23,6 +23,7 @@ endif::[]
 :git_username: jprivet-dev
 :git_url: https://github.com/{git_username}/{git_project}
 :git_clone_ssh: git@github.com:{git_username}/{git_project}.git
+:stackblitz_from_github: https://stackblitz.com/github/{git_username}/{git_project}/tree/main/app
 
 // Releases
 :project_release: v0.0.0-alpha.0
@@ -38,12 +39,13 @@ endif::[]
 
 image:https://badgen.net/badge/release/{project_release}/blue[Project release,link={git_url}/releases/tag/{project_release}]
 image:https://badgen.net/badge/angular/{angular_release}/d93630[Angular release,link=https://github.com/angular/angular/releases/tag/{angular_release}]
+image:https://developer.stackblitz.com/img/open_in_stackblitz_small.svg[Open in StackBlitz,link={stackblitz_from_github}]
 
 toc::[]
 
 == Presentation
 
-Create a new Angular project with a minimal configuration of ESLint & Prettier, and set up your editor (PHPStormq, VSCode).
+Create a new Angular project with a minimal configuration of ESLint & Prettier, and set up your editor (PHPStorm, VSCode).
 
 Versions used :
 
@@ -106,6 +108,12 @@ NOTE: More information on https://angular.io/cli
 . Open your browser on http://localhost:4200/
 
 After installation, you can <<set-up-your-editor>>.
+
+{back_to_top}
+
+== Launching project on StackBlitz
+
+image:https://developer.stackblitz.com/img/open_in_stackblitz.svg[Open in StackBlitz,link={stackblitz_from_github}]
 
 {back_to_top}
 
@@ -456,6 +464,10 @@ v1.1501.0.0
 * https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 * https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 * https://khalilstemmler.com/blogs/tooling/prettier/
+
+=== StackBlitz
+
+* https://developer.stackblitz.com/guides/integration/open-from-github
 
 {back_to_top}
 

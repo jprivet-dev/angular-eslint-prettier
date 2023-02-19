@@ -422,6 +422,24 @@ image::doc/vscode-reformat-after.png[]
 
 {back_to_top}
 
+== Semantic Versioning
+
+NOTE: Based on https://semver.org/
+
+```
+v[MAJOR].[ANGULAR_VERSION].[MINOR].[PATCH]
+
+With [ANGULAR_VERSION] = [ANGULAR MAJOR + ANGULAR MINOR]
+```
+
+Example, with `v1` of this repository with `Angular 15.1.6`:
+
+```
+v1.1501.0.0
+```
+
+{back_to_top}
+
 == Resources
 
 === NVM & Node

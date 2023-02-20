@@ -23,7 +23,8 @@ endif::[]
 :git_username: jprivet-dev
 :git_url: https://github.com/{git_username}/{git_project}
 :git_clone_ssh: git@github.com:{git_username}/{git_project}.git
-:stackblitz_from_github: https://stackblitz.com/github/{git_username}/{git_project}/tree/main/app
+:stackblitz_from_github: https://stackblitz.com/github/{git_username}/{git_project}/tree/stackblitz-debug/app
+// :stackblitz_from_github: https://stackblitz.com/github/{git_username}/{git_project}/tree/main/app
 
 // Releases
 :project_release: v1.1501.2.0
@@ -39,7 +40,7 @@ endif::[]
 
 image:https://badgen.net/badge/release/{project_release}/blue[Project release,link={git_url}/releases/tag/{project_release}]
 image:https://badgen.net/badge/angular/{angular_release}/d93630[Angular release,link=https://github.com/angular/angular/releases/tag/{angular_release}]
-// image:https://developer.stackblitz.com/img/open_in_stackblitz_small.svg[Open in StackBlitz,link={stackblitz_from_github}]
+image:https://developer.stackblitz.com/img/open_in_stackblitz_small.svg[Open in StackBlitz,link={stackblitz_from_github}]
 
 toc::[]
 

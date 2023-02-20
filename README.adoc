@@ -102,6 +102,8 @@ NOTE: More information on https://angular.io/cli
 . `$ ng serve`
 . Open your browser on http://localhost:4200/
 
+image::doc/welcome.png[]
+
 After installation, you can <<set-up-your-editor>>.
 
 {back_to_top}

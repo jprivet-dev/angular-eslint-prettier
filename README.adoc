@@ -151,9 +151,18 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 ```
 
-After that, everything worked perfectly!
+After that, everything worked perfectly on StackBlitz:
 
 image::doc/stackblitz-zone-ok.png[]
+
+But triggers a warning locally with `$ ng serve`:
+
+```
+Warning: .../angular-eslint-prettier/app/src/main.ts depends on 'zone.js/dist/zone'. CommonJS or AMD dependencies can cause optimization bailouts.
+For more info see: https://angular.io/guide/build#configuring-commonjs-dependencies
+```
+
+WARNING: I don't have a satisfactory solution at the moment. Still searching...
 
 [NOTE]
 ====

@@ -46,7 +46,7 @@ toc::[]
 
 == Presentation
 
-Create a new Angular project with a minimal configuration of ESLint & Prettier, and set up your editor (PHPStorm, VSCode).
+Create a new Angular project with a minimal configuration of ESLint & Prettier, set up your editor (PHPStorm, VSCode) and launch the project in StackBlitz.
 
 Versions used :
 
@@ -68,7 +68,7 @@ Versions used :
 
 === Install NVM or Node
 
-To lauch locally that project, you will need to install NVM (Node Version Manager) or Node.
+To launch locally that project, you will need to install NVM (Node Version Manager) or Node.
 
 [NOTE]
 ====
@@ -82,7 +82,7 @@ In my case, I used Node in KDE Neon (see https://github.com/nodejs/snap).
 
 {back_to_top}
 
-=== Install a global Angular CLI (optional)
+=== Install a global Angular CLI (optional) [[install-global-angular-cli]]
 
 If you want to regenerate step by step a new Angular project, you will need to install/update a global Angular CLI:
 
@@ -186,6 +186,8 @@ $ [[ -d app ]] && rm -rf app
 
 ==== Step #2: Generate an empty Angular workspace
 
+NOTE: Prerequisites: <<install-global-angular-cli>>
+
 ```
 $ ng new app --create-application false --defaults
 $ cd app
@@ -279,6 +281,8 @@ $ [[ -d app ]] && rm -rf app
 ```
 
 ==== Step #2: Create an Angular app
+
+NOTE: Prerequisites: <<install-global-angular-cli>>
 
 ```
 $ ng new app --skip-git true --routing --style scss --defaults --strict

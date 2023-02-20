@@ -16,6 +16,10 @@ ng add @angular-eslint/schematics
 echo "> Generate a new Angular app in the workspace using ESLint"
 ng generate @angular-eslint/schematics:application app --project-root --routing --style scss --defaults --strict
 
+echo "> Avoid error in StackBlitz"
+line="import 'zone.js/dist/zone'; // Avoid error in StackBlitz"
+sed  -i "1i ${line}" ./src/main.ts
+
 echo "> Install Prettier locally"
 npm install --save-dev --save-exact prettier
 

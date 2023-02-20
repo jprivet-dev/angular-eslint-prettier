@@ -14,6 +14,10 @@ echo "> Create an Angular app"
 ng new app --skip-git true --routing --style scss --defaults --strict
 cd app
 
+echo "> Avoid error in StackBlitz"
+line="import 'zone.js/dist/zone'; // Avoid error in StackBlitz"
+sed  -i "1i ${line}" ./src/main.ts
+
 echo "> Install ESLint"
 ng add @angular-eslint/schematics
 

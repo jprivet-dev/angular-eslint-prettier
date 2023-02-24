@@ -120,7 +120,7 @@ NOTE: More information on https://developer.stackblitz.com/guides/integration/op
 
 === Avoid error with `zone.js`
 
-Angular CLI generates the `main.ts` file without `zone.js`:
+Angular CLI locally generates by default the `main.ts` file without `zone.js`:
 
 .main.ts
 ```typescript
@@ -132,7 +132,7 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 ```
 
-Locally everything works fine with `$ ng serve`, but this creates the following error in StackBlitz:
+Which creates an error (NG0908) when I launch the {stackblitz_from_github}[project in StackBlitz]:
 
 ```
 Error: NG0908: In this configuration Angular requires Zone.js
@@ -140,7 +140,9 @@ Error: NG0908: In this configuration Angular requires Zone.js
 
 image::doc/stackblitz-zone-error.png[]
 
-So to fix this, I have to import `zone.js` in `main.ts`:
+*At this stage, locally everything works fine with `$ ng serve`.*
+
+So to solve the problem in StackBlitz, I have to import `zone.js` in `main.ts`:
 
 .main.ts
 ```typescript
@@ -157,21 +159,25 @@ After that, everything worked perfectly on StackBlitz:
 
 image::doc/stackblitz-zone-ok.png[]
 
-But triggers a warning locally with `$ ng serve`:
+*But triggers a warning locally with `$ ng serve`:*
 
 ```
-Warning: .../angular-eslint-prettier/app/src/main.ts depends on 'zone.js/dist/zone'. CommonJS or AMD dependencies can cause optimization bailouts.
+Warning: .../angular-stackblitz/src/main.ts depends on 'zone.js/dist/zone'. CommonJS or AMD dependencies can cause optimization bailouts.
 For more info see: https://angular.io/guide/build#configuring-commonjs-dependencies
 ```
 
-WARNING: I don't have a satisfactory solution at the moment. Still searching...
+[WARNING]
+====
+I created an issue on StackBlitz: https://github.com/stackblitz/core/issues/2366.
+
+I am looking for a single solution without `zone.js`, to make everything works, without errors and alerts, in StackBlitz and locally with `$ ng serve`.
+
+Still searching...
+====
 
 [NOTE]
 ====
-More information on:
-
-* https://github.com/manfredsteyer/ngx-build-plus/issues/4#issuecomment-613988290
-* https://github.com/jprivet-dev/angular-stackblitz
+See https://github.com/manfredsteyer/ngx-build-plus/issues/4#issuecomment-613988290
 ====
 
 {back_to_top}
@@ -263,7 +269,7 @@ $ cp .gitignore .prettierignore
 
 TIP: Base your `.prettierignore` on `.gitignore` and `.eslintignore` (if you have one).
 
-NOTE: More information on https://prettier.io/docs/en/install.html
+NOTE: More information on https://prettier.io/docs/en/install.html.
 
 {back_to_top}
 
